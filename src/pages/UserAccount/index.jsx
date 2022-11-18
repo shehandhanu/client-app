@@ -101,7 +101,7 @@ const UserAccount = () => {
         <Box sx={{ mt: 4 }}>
           <Box sx={{ display: "flex" }}>
             <Typography variant="h5">
-              Hi, {userAccount.first_name} {userAccount.last_name}
+              Hi Good Evening, {userAccount.first_name} {userAccount.last_name}
             </Typography>
             <Badge
               color="warning"
@@ -112,24 +112,37 @@ const UserAccount = () => {
             />
           </Box>
 
-          <Grid container spacing={3}>
+          <Grid>
+            <div class="wrapper">
+              <div class="left">
+                <h4>
+                  {userAccount.first_name} {userAccount.last_name}
+                </h4>
+              </div>
+              <div class="right">
+                <div class="info">
+                  <h3>Your Information</h3>
+                  <div class="info_data">
+                    <div class="data">
+                      <h4>User Name</h4>
+                      <p>{userAccount.user_name}</p>
+                    </div>
+                    <div class="data">
+                      <h4>Email</h4>
+                      <p>{userAccount.email}</p>
+                    </div>
+                    <div class="data">
+                      <h4>Phone</h4>
+                      <p>{userAccount.phone_number}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Grid>
+
+          <Grid>
             <Grid item xs={12} md={5}>
-              <Card sx={{ mt: 3 }}>
-                <CardContent>
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    Your Information
-                  </Typography>
-                  <Typography sx={{ mb: 1 }} color="text.secondary">
-                    Username - {userAccount.user_name}
-                  </Typography>
-                  <Typography sx={{ mb: 1 }} color="text.secondary">
-                    Email - {userAccount.email}
-                  </Typography>
-                  <Typography sx={{ mb: 1 }} color="text.secondary">
-                    Phone Number - {userAccount.phone_number}
-                  </Typography>
-                </CardContent>
-              </Card>
               <Box sx={{ mt: 2 }}>
                 <Box>
                   <Typography sx={{ mb: 2 }} variant="h6">
@@ -148,7 +161,13 @@ const UserAccount = () => {
                     value={message}
                     variant="filled"
                     helperText={
-                      <Box sx={{ display: "flex", justifyContent: "space-between", marginLeft: 0 }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          marginLeft: 0,
+                        }}
+                      >
                         <Typography color={"#e91e63"}>
                           {isMessageError && "Test message"}
                         </Typography>
@@ -162,7 +181,9 @@ const UserAccount = () => {
                     }}
                   />
                 </Box>
-                <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 1 }}>
+                <Box
+                  sx={{ display: "flex", justifyContent: "flex-end", mt: 1 }}
+                >
                   {message.trim().length > 0 && (
                     <Button
                       variant="outlined"
@@ -182,7 +203,9 @@ const UserAccount = () => {
                   <Typography sx={{ mb: 2 }} variant="h6">
                     Save Files
                   </Typography>
-                  <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                  <Box
+                    sx={{ display: "flex", justifyContent: "space-between" }}
+                  >
                     <Typography>Select the file/ files</Typography>
 
                     <Box>
@@ -212,7 +235,9 @@ const UserAccount = () => {
                     </Box>
                   </Box>
                   <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                    <Typography sx={{ color: "#bdbdbd", fontSize: 12 }}>{fileName}</Typography>
+                    <Typography sx={{ color: "#bdbdbd", fontSize: 12 }}>
+                      {fileName}
+                    </Typography>
                   </Box>
                 </Box>
               </Box>

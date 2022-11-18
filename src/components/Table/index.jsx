@@ -50,8 +50,8 @@ export default function BasicTable(props) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table" size="medium">
-        <TableHead>
-          <TableRow>
+        <TableHead className="th">
+          <TableRow className="th">
             <TableCell>File Name</TableCell>
             <TableCell align="right">Size</TableCell>
             <TableCell align="right">Status</TableCell>
@@ -60,7 +60,10 @@ export default function BasicTable(props) {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.fileName} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+            <TableRow
+              key={row.fileName}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
               <TableCell component="th" scope="row">
                 {row.fileName}
               </TableCell>

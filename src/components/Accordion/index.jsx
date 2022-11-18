@@ -1,5 +1,10 @@
 import { ArrowForwardIosSharp } from "@mui/icons-material";
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 
@@ -16,10 +21,16 @@ const CustomAccordion = styled((props) => (
 }));
 
 const CustomAccordionSummary = styled((props) => (
-  <AccordionSummary expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />} {...props} />
+  <AccordionSummary
+    className="th"
+    expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />}
+    {...props}
+  />
 ))(({ theme }) => ({
   backgroundColor:
-    theme.palette.mode === "dark" ? "rgba(255, 255, 255, .05)" : "rgba(0, 0, 0, .03)",
+    theme.palette.mode === "dark"
+      ? "rgba(255, 255, 255, .05)"
+      : "rgba(0, 0, 0, .03)",
   flexDirection: "row-reverse",
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(90deg)",
@@ -52,7 +63,11 @@ const NewAccordion = (props) => {
             onChange={handleChange(index)}
             key={index}
           >
-            <CustomAccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+            <CustomAccordionSummary
+              className="th"
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+            >
               <Typography>Message #{index + 1}</Typography>
             </CustomAccordionSummary>
             <CustomAccordionDetails>
